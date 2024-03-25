@@ -78,7 +78,7 @@ public:
         // the scope of the `LoanedMessage` instance.
         // After the call to `publish()`, the message will be correctly allocated.
         auto non_pod_loaned_msg = non_pod_pub_->borrow_loaned_message();
-        auto non_pod_msg_data = "Hello World: " + std::to_string(count_);
+        auto non_pod_msg_data = "Hello World 0.1.2: " + std::to_string(count_);
         non_pod_loaned_msg.get().data = non_pod_msg_data;
         RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", non_pod_msg_data.c_str());
         non_pod_pub_->publish(std::move(non_pod_loaned_msg));

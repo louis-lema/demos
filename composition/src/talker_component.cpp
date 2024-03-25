@@ -43,7 +43,7 @@ Talker::Talker(const rclcpp::NodeOptions & options)
 void Talker::on_timer()
 {
   auto msg = std::make_unique<std_msgs::msg::String>();
-  msg->data = "Hello World: " + std::to_string(++count_);
+  msg->data = "Hello World 0.1.2: " + std::to_string(++count_);
   RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", msg->data.c_str());
   std::flush(std::cout);
 

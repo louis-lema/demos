@@ -22,7 +22,7 @@ int main(int argc, char ** argv)
 {
   rclcpp::init(argc, argv);
   auto watermark_node =
-    std::make_shared<WatermarkNode>("image", "watermarked_image", "Hello world!");
+    std::make_shared<WatermarkNode>("image", "watermarked_image", "Hello World 0.1.2!");
   rclcpp::spin(watermark_node);
 
   rclcpp::shutdown();

@@ -47,7 +47,7 @@ public:
       [this]() -> void
       {
         msg_ = std::make_unique<std_msgs::msg::String>();
-        msg_->data = "Hello World: " + std::to_string(count_++);
+        msg_->data = "Hello World 0.1.2: " + std::to_string(count_++);
         RCLCPP_INFO(this->get_logger(), "Publishing: '%s'", msg_->data.c_str());
         pub_->publish(std::move(msg_));
       };

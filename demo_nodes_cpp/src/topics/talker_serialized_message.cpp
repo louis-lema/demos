@@ -46,19 +46,19 @@ public:
       {
         // In this example we send a std_msgs/String as serialized data.
         // This is the manual CDR serialization of a string message with the content of
-        // Hello World: <count_> equivalent to talker example.
+        // Hello World 0.1.2: <count_> equivalent to talker example.
         // The serialized data is composed of a 8 Byte header
         // plus the length of the actual message payload.
         // If we were to compose this serialized message by hand, we would execute the following:
         // rcutils_snprintf(
         //   serialized_msg_.buffer, serialized_msg_.buffer_length, "%c%c%c%c%c%c%c%c%s %zu",
-        //   0x00, 0x01, 0x00, 0x00, 0x0f, 0x00, 0x00, 0x00, "Hello World:", count_++);
+        //   0x00, 0x01, 0x00, 0x00, 0x0f, 0x00, 0x00, 0x00, "Hello World 0.1.2:", count_++);
 
         // In order to ease things up, we call the rmw_serialize function,
         // which can do the above conversion for us.
         // For this, we initially fill up a std_msgs/String message and fill up its content
         auto string_msg = std::make_shared<std_msgs::msg::String>();
-        string_msg->data = "Hello World:" + std::to_string(count_++);
+        string_msg->data = "Hello World 0.1.2:" + std::to_string(count_++);
 
         // We know the size of the data to be sent, and thus can pre-allocate the
         // necessary memory to hold all the data.

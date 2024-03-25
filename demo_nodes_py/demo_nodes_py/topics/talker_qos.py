@@ -41,7 +41,7 @@ class TalkerQos(Node):
 
     def timer_callback(self):
         msg = String()
-        msg.data = 'Hello World: {0}'.format(self.i)
+        msg.data = 'Hello World 0.1.2: {0}'.format(self.i)
         self.i += 1
         self.get_logger().info('Publishing: "{0}"'.format(msg.data))
         self.pub.publish(msg)
